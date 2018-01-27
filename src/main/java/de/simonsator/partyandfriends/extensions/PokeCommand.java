@@ -9,6 +9,7 @@ import de.simonsator.partyandfriends.utilities.PatterCollection;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.config.Configuration;
 
+import java.util.List;
 import java.util.regex.Matcher;
 
 /**
@@ -19,8 +20,8 @@ public class PokeCommand extends FriendSubCommand {
 	private final Matcher POKE_MESSAGE;
 	private final Matcher POKED_MESSAGE;
 
-	protected PokeCommand(String[] pCommands, int pPriority, String pHelp, Configuration pMessages) {
-		super(pCommands, pPriority, pHelp);
+	protected PokeCommand(List<String> pCommands, int pPriority, String pHelp, Configuration pMessages, String pPermission) {
+		super(pCommands, pPriority, pHelp, pPermission);
 		POKE_MESSAGE = PatterCollection.PLAYER_PATTERN.matcher(pMessages.getString("Messages.Poke"));
 		POKED_MESSAGE = PatterCollection.PLAYER_PATTERN.matcher(pMessages.getString("Messages.Poked"));
 	}

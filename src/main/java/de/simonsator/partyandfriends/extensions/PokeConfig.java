@@ -22,6 +22,7 @@ public class PokeConfig extends ConfigurationCreator {
 	private void loadDefaults() {
 		set("Commands.Poke.Names", "poke", "pokefriend");
 		set("Commands.Poke.Priority", 20);
+		set("Commands.Poke.Permission", "");
 		set("Messages.Help", "&8/&5friend poke [Friend] &r &8- &7Pokes the given friend");
 		set("Messages.Poke", " &7You were poked by [PLAYER].");
 		set("Messages.Poked", " &7You poked [PLAYER].");
