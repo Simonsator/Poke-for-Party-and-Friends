@@ -3,4 +3,4 @@ version: ${project.version}
 author: Simonsator
 depends: [PartyAndFriends]
 main: de.simonsator.partyandfriends.extensions.PokeMain
-description: An add-on for party and friends to add tab completes for friends and party members
+description: An add-on for party and friends to add the command /friend poke
