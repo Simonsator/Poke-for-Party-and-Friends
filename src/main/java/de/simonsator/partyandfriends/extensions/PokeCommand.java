@@ -33,7 +33,7 @@ public class PokeCommand extends FriendSubCommand {
 		PAFPlayer playerQuery = PAFPlayerManager.getInstance().getPlayer(args[1]);
 		if (!isPlayerOnline(pPlayer, playerQuery))
 			return;
-		if (!isAFriendOf(pPlayer, playerQuery))
+		if (!isAFriendOf(pPlayer, playerQuery, args))
 			return;
 		if (!allowsWriteTo(pPlayer, playerQuery))
 			return;
@@ -52,7 +52,7 @@ public class PokeCommand extends FriendSubCommand {
 	private boolean allowsWriteTo(OnlinePAFPlayer pPlayer, PAFPlayer pQueryPlayer) {
 		if (pQueryPlayer.getSettingsWorth(2) == 1) {
 			sendError(pPlayer, new TextComponent(PREFIX
-					+ Main.getInstance().getMessagesYml().getString("Friends.Command.MSG.CanNotWriteToHim")));
+					+ Main.getInstance().getMessages().getString("Friends.Command.MSG.CanNotWriteToHim")));
 			return false;
 		}
 		return true;

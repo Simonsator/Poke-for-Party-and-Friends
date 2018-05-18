@@ -16,7 +16,7 @@ public class PokeMain extends PAFExtension {
 	@Override
 	public void onEnable() {
 		try {
-			Configuration config = new PokeConfig(new File(getDataFolder(), "config.yml")).getCreatedConfiguration();
+			Configuration config = new PokeConfig(new File(getConfigFolder(), "config.yml"), this).getCreatedConfiguration();
 			Friends.getInstance().addCommand(new PokeCommand(config.getStringList("Commands.Poke.Names"), config.getInt("Commands.Poke.Priority"), config.getString("Messages.Help"), config, config.getString("Commands.Poke.Permission")));
 			registerAsExtension();
 		} catch (IOException e) {
